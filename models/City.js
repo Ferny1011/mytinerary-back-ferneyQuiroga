@@ -6,6 +6,8 @@ let schema = new Schema({
     country: { type: String, required: true },
     image: { type: String, required: true },
     description:{ type: String, required: true },
+    currency: { type: String, required: true },
+    language: { type: String, required: true },
     user: { type: Types.ObjectId, ref: 'users' }
 }, {
     timestamps: true
