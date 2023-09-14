@@ -4,7 +4,7 @@ const controller = {
     getCities: async (req, res) => {
         let queries = {};
         if(req.query.name){
-            queries.name = new RegExp(`^${req.query.name}`, 'i');
+            queries.name = new RegExp(`^${req.query.name.trim()}`, 'i');
         }
 
         try{
