@@ -6,7 +6,9 @@ import { createUserSchema } from '../schema/user.schema.js';
 
 const router = express.Router();
 
-router.get('/', userController.getUsers);
-router.post('/', validator(createUserSchema) ,userController.createUser);
+router.post('/', validator(createUserSchema), userController.createUser);
+router.put('/:id', userController.updateUser);
+router.delete('/:id', userController.deleteUser);
+
 
 export default router;

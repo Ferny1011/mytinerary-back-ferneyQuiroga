@@ -18,5 +18,6 @@ export const createUserSchema = Joi.object({
         'string.min': 'Name must be at least 3 characters long',
         'string.max': 'Name must be at most 50 characters long'
         }),
-    image: Joi.string().required().uri()
+    image: Joi.string().required().uri(),
+    country: Joi.string().required()
 });

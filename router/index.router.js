@@ -7,7 +7,7 @@ import authRouter from './auth.router.js';
 const router = express.Router();
 
 router.use('/cities', cityRouter);
-router.use('/users', userRouter);
+router.use('/user', userRouter);
 router.use('/itineraries', itineraryRouter);
 router.use('/auth', authRouter);
 
