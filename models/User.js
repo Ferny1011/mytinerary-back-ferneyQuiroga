@@ -7,12 +7,12 @@ let schema = new Schema({
     email: { type: String, required: true },
     password: { type: String, required: true },
     photo: { type: String },
+    google: { type: Boolean, default: false },
     country: { type: String },
     role: { type: Number, default: 0 },
     online: { type: Boolean, default: false },
     verified: { type: Boolean, default: true },
-    verified_code: { type: String },
-
+    verified_code: { type: String }
 }, {
     timestamps: true
 });

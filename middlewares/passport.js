@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 import passport from "passport";
-import { Strategy, ExtractJwt } from "passport-jwt"; 
+import { Strategy, ExtractJwt } from "passport-jwt";
 
 export default passport.use(
     new Strategy(
@@ -9,8 +9,8 @@ export default passport.use(
             secretOrKey: process.env.SECRET
         },
         async (jwt_payload, done) => {
-            try{
-                const user = await User.findOne({ _id: jwt_payload.id },'-password');
+            try {
+                const user = await User.findOne({ _id: jwt_payload.id }, '-password');
                 if (user) {
                     return done(null, user);
                 } else {

@@ -6,11 +6,12 @@ import { accountHasBeenVerified } from "../middlewares/auth/accountHasBeenVerifi
 import { passwordIsOk } from "../middlewares/auth/passwordIsOk.middleware.js";
 import passport from "../middlewares/passport.js";
 
-const {signup, signin, signout, token} = authController;
+const {signup, signin, signout, token, googleSignin} = authController;
 const router = express.Router();
 
 router.post('/signup', /*validator(validateSignup) ,*/accountExistsSignup ,signup);
 router.post('/signin', /*validator(validateSignup) ,*/accountExistsSignin, accountHasBeenVerified, passwordIsOk ,signin);
-router.post ('/signout',passport.authenticate('jwt', {session:false}) ,signout);
+router.post('/google', googleSignin)
+router.post ('/signout', passport.authenticate('jwt', {session:false}) ,signout);
 router.post('/token', passport.authenticate('jwt', {session:false}),token)
 export default router;
