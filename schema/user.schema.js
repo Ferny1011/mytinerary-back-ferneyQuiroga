@@ -25,6 +25,9 @@ export const createUserSchema = Joi.object({
     photo: Joi.string().required().uri().messages({
         'string.empty': 'Photo is required',
         'string.uri': 'Photo must be a valid URL'
+    }),
+    country: Joi.string().required().messages({
+        'string.empty': 'Country is required'
     })
 });
 

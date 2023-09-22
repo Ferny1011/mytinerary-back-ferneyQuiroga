@@ -8,7 +8,7 @@ let schema = new Schema({
     password: { type: String, required: true },
     photo: { type: String },
     google: { type: Boolean, default: false },
-    country: { type: String },
+    country: { type: String, required: true, default: 'Argentina' },
     role: { type: Number, default: 0 },
     online: { type: Boolean, default: false },
     verified: { type: Boolean, default: true },
