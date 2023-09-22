@@ -8,7 +8,8 @@ let schema = new Schema({
     description:{ type: String, required: true },
     currency: { type: String, required: true },
     language: { type: String, required: true },
-    user: { type: Types.ObjectId, ref: 'users' }
+    user: { type: Types.ObjectId, ref: 'users' },
+    itineraries: [{ type: Types.ObjectId, ref: 'itineraries' }]
 }, {
     timestamps: true
 });

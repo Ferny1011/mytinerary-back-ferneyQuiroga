@@ -42,6 +42,20 @@ const controller = {
             });
         }
     },
+    getItinerariesByCity: async (req, res) => {
+        try{
+            const itineraries = await Itinerary.find({city: req.params.cityId});
+            return res.status(200).json({
+                success: true,
+                itineraries: itineraries
+            });
+        } catch(error){
+            return res.status(500).json({
+                success: false,
+                message: 'Error getting itineraries'
+            });
+        }
+    },
     createItinerary: async (req, res) => {
         try {
             const newItinerary = await Itinerary.create(req.body);
