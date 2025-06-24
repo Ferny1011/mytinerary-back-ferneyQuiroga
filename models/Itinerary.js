@@ -7,7 +7,7 @@ let schema = new Schema({
     image: { type: String, required: true },
     price: { type: Number, required: true, min: 1, max: 5 },
     duration: { type: Number, required: true },
-    hashtags:{ type: Array, required: true, minlenght: 1, maxlenght: 3 },
+    hashtags: { type: Array, required: true, minlength: 1, maxlength: 3 },
     likes: { type: Number, required: true, default: 0 },
     comments: { type: Array, required: true, default: [] },
     user: { type: Types.ObjectId, ref: 'users' },
