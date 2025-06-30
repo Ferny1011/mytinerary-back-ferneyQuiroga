@@ -19,7 +19,7 @@ const controller = {
     },
     getCommentsByItinerary: async (req, res) => {
         try {
-            const comments = await Comment.find({ itinerary: req.params.itineraryId }).populate('user');
+            const comments = await Comment.find({ itinerary: req.params.id }).populate('user');
             return res.status(200).json({ success: true, comments });
         } catch (error) {
             return res.status(500).json({ success: false, message: error.message });

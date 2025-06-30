@@ -19,7 +19,7 @@ const controller = {
     },
     getActivitiesByItinerary: async (req, res) => {
         try {
-            const activities = await Activity.find({ itinerary: req.params.itineraryId });
+            const activities = await Activity.find({ itinerary: req.params.id });
             return res.status(200).json({ success: true, activities });
         } catch (error) {
             return res.status(500).json({ success: false, message: error.message });
